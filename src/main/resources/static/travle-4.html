@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Spots – 4단계</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', system-ui;
+            background-color: #f7f2e9;
+            color: #273821;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .page-wrapper {
+            width: 1440px;
+            padding: 24px 40px 140px; /* 하단 여백 약간 늘림 */
+            position: relative;
+        }
+
+        /* ------------------------------ */
+        /* 상단 물결 배경 (앞에 보이게 z-index 더 큼) */
+        /* ------------------------------ */
+        .top-bg {
+            position: absolute;
+            top: 90px; /* 너무 위에 딱 붙지 않게 약간 내려줌 */
+            left: 0;
+            width: 100%;
+            height: 520px;  /* 필요하면 조정 */
+            background-image: url("/images/여행지창 상단 배경.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            z-index: 2;              /* ★ 하단보다 앞 */
+            pointer-events: none;
+        }
+
+        /* ------------------------------ */
+        /* 하단 물결+초록 배경 (조금 더 크게, 뒤에) */
+        /* ------------------------------ */
+        .bottom-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 680px;  /* ★ 더 크게 키움 */
+            background-image: url("/images/여행지창 하단 배경.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center bottom;
+            z-index: 1;              /* ★ top-bg 뒤에 */
+            pointer-events: none;
+        }
+
+        /* 상단 메뉴바 */
+        .nav-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+            z-index: 10;
+        }
+
+        .nav-bar-img {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .nav-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1120px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #737373;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            color: #4a5c4a;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-right > div,
+        .nav-right > a {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 타이틀 */
+        .title-section {
+            text-align: center;
+            margin-top: 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .title-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            margin-bottom: 24px;
+        }
+
+        .step-title {
+            margin-bottom: 4px;
+            font-size: 22px;
+        }
+
+        .step-sub {
+            font-size: 12px;
+            color: #7b7b7b;
+            margin-bottom: 30px;
+        }
+
+        /* 추천 지역 이름 */
+        .region {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 14px;
+            font-size: 22px;
+            font-weight: 600;
+            position: relative;
+            z-index: 10;
+        }
+
+        .region-desc {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 여행 카드 3개 */
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .spot-card {
+            width: 330px;
+            background-color: #fbf5e6;
+            border-radius: 60px;
+            padding: 34px;
+            text-align: center;
+        }
+
+        .spot-img {
+            width: 100%;
+            border-radius: 40px;
+            margin-bottom: 22px;
+        }
+
+        .spot-title {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .spot-sub {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: #464646;
+        }
+
+        .spot-tag {
+            font-size: 11px;
+            color: #6f6f6f;
+        }
+
+        /* KeyPoint */
+        .keypoint-wrapper {
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .keypoint-text {
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .keypoint-icon {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="page-wrapper">
+
+    <div class="nav-wrapper">
+        <img src="/images/2상단메뉴바.png" class="nav-bar-img">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo" style="text-decoration:none; color:inherit;">M:ind</a>
+            <div class="nav-right">
+                <div>About</div>
+                <a href="/research-notes.html" style="text-decoration:none; color:inherit;">Research Notes</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="title-section">
+        <h1>Travel spots</h1>
+
+        <div class="step-title">4단계 - 심한 스트레스</div>
+        <div class="step-sub">19점 이상</div>
+    </section>
+
+    <!-- 상단 물결 -->
+    <div class="top-bg"></div>
+
+    <div class="region">📍 경기 양평</div>
+    <div class="region-desc">
+        ‘여행처럼 보이지만 사실 유식 편이 필요하기 때문에 멀리 가지 않는 것 추천’ <br>
+        용문역 → 서후리 숲길 택시 15분 내외
+    </div>
+
+    <div class="cards-wrapper">
+
+        <div class="spot-card">
+            <img src="/images/4 4단계 용문-서후리숲길.png" class="spot-img">
+            <div class="spot-title">용문—서후리 숲길</div>
+            <div class="spot-sub">치유 프로그램 운영하는 곳 <br> 사람이 적어서 정서 안정 효과와 큼</div>
+            <div class="spot-tag">#휴식과 안정화</div>
+        </div>
+
+        <div class="spot-card">
+            <img src="/images/4 4단계 로컬숙소.png" class="spot-img">
+            <div class="spot-title">로컬 조용한 힐링 숙소</div>
+            <div class="spot-sub">소규모 리트릿형 숙소에서 휴식 <br> 숨튜브, 통창</div>
+            <div class="spot-tag">#정신 놓기, 뇌 휴식</div>
+        </div>
+
+    </div>
+
+    <div class="keypoint-wrapper">
+        <div class="keypoint-text">
+            <img src="/images/2가로선.png" class="keypoint-icon">
+            KeyPoint 관광지처럼 붐비지 않아 안전·고립·고요함을 다 얻을 수 있음
+        </div>
+    </div>
+
+    <!-- 하단 물결+초록 배경 -->
+    <div class="bottom-bg"></div>
+
+</div>
+</body>
+</html>

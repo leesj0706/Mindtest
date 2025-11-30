@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Notes</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Pretendard", "Noto Sans KR", sans-serif;
+            background-color: #dfe6d5;
+            color: #333;
+        }
+
+        .navbar-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+            z-index: 10;
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-bar-img {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .nav-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1120px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #737373;
+            line-height: 1;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            color: #4a5c4a;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            color: #737373;
+            text-decoration: none;
+        }
+
+        .nav-link.research {
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 44px;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: "Times New Roman", serif;
+        }
+
+        .content-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding-bottom: 100px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 460px;
+            padding: 60px 50px;
+            background-image: url("images/card-bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
+            box-sizing: border-box;
+            line-height: 1.65;
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-size: 26px;
+            font-family: "Times New Roman", serif;
+        }
+
+        .ref {
+            margin-top: 30px;
+            font-size: 13px;
+            line-height: 1.45;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 상단바 -->
+<div class="navbar-wrapper">
+    <div class="navbar">
+        <img src="/images/1상단메뉴바.png" class="nav-bar-img" alt="top bar">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo">Mind</a>
+            <div class="nav-right">
+                <div class="nav-link">About</div>
+                <a href="/research-notes.html" class="nav-link research">Research Notes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 메인 타이틀 -->
+<div class="title">Research Notes</div>
+
+<!-- 카드 컨테이너 -->
+<div class="content-wrap">
+
+    <!-- 왼쪽 카드 -->
+    <div class="card">
+        <h2>Stress Scale Test</h2>
+
+        <p>
+            1. 스트레스 지각 척도(PSS) 정의<br>
+            특정 스트레스 사건에 대한 측정이 아닌 지난 한 달간의 스트레스에 대한
+            전반적인 측정으로 객관적인 스트레스 원인 여부 보다는 개인들이 실제로 느끼는
+            주관적 스트레스 정도를 진단하는데 적합한 측정 도구
+        </p>
+
+        <p>
+            2. 스트레스 지각 척도 점수<br>
+            총점은 최소 0부터 최대 40점의 범위를 갖고,
+            점수가 높을수록 스트레스 지각이 높은 상태임을 뜻한다.
+        </p>
+
+        <p>
+            • 0점~13점 : 정상적인 수준으로 심리적으로 안정되어 있는 상태
+        </p>
+
+        <p>
+            • 14점~16점 : 약간의 스트레스를 받고 있는 상태로 가벼운 산책, 명상 등
+            자신만의 스트레스 해소법을 찾아보는 것이 좋음
+        </p>
+
+        <p>
+            • 17점~18점 : 중간 정도의 스트레스를 받고 있는 상태로
+            적극적 스트레스 해소 노력이 필요하며, 상담 전문가의 도움을 고려할 수 있음
+        </p>
+
+        <p>
+            • 19점 이상 : 심한 스트레스를 받고 있는 상태로
+            일상 기능의 저하 가능성이 높으며 전문가 상담 및 추가적인 검사 권장
+        </p>
+
+        <div class="ref">
+            [논문 출처]<br>
+            이용혁, 서이규, 고광용, 덕성여대, 황정희, 정미경.
+            한국판 스트레스 지각척도(KPSS)의 타당도 —
+            한국심리학회지: 건강 (2012): 128-134.<br>
+            박도 (2023). 스트레스 지각 척도(PSS)의 활용에 관한 고찰.
+            한국스트레스 연구회 추계 학술대회, 4(8), 427.
+        </div>
+    </div>
+
+    <!-- 오른쪽 카드 -->
+    <div class="card">
+        <h2>fMRI Type</h2>
+
+        <p>
+            1단계 – 안정 상태 (정상 활성 패턴)<br>
+            Archer 등 연구에 따르면 스트레스 지각이 낮을 때는
+            DMN-전두엽가-엣 네트워크 연결성이 안정적이며
+            저활성이 거의 없고 정상적 활성 패턴이 나타나는 단계
+        </p>
+
+        <p>
+            2단계 – 초기 스트레스 (저활성 증가 시작)<br>
+            낮은 수준의 스트레스에서도 전전두엽-엣 네트워크의
+            연결성이 먼저 약해지는 것으로 보고됨.
+            소규모 피질·지핵 변화가 등장하는 초기 패턴.
+        </p>
+
+        <p>
+            3단계 – 중간 스트레스 (혼합 패턴)<br>
+            Archer와 Brown의 연구에 따르면 중간 스트레스에서는
+            저활성 증가와 동시에 보상적 활성 패턴이 함께 나타남.
+            네트워크 기능이 불안정해지며 불균형 경향이 시작되는 단계.
+        </p>
+
+        <p>
+            4단계 – 높은/만성 스트레스 (불균형 패턴)<br>
+            Brown 연구에서는 전전두엽–해마 축의 조절 실패,
+            과활성과 저활성이 동시에 나타나는 불규칙 패턴이 보고됨.
+            여러 회로가 동시에 무너지는 혼란 단계로 정의됨.
+        </p>
+
+        <div class="ref">
+            [논문 출처]<br>
+            Archer, J. A., Lee, A., Qiu, A., & Chen, S.-H. A. (2023).
+            Functional connectivity of resting-state, working memory
+            and inhibition networks in perceived stress.
+            Journal of Affective Disorders.<br><br>
+
+            Brown, T. L., Gagnon, S. A., & Wagner, A. D. (2014).
+            Stress disrupts hippocampal–prefrontal function during
+            prospective spatial navigation and reduces behavioral flexibility.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

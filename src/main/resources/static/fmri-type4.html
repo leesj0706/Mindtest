@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>fMRI Type – 4단계</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background-image: url("/images/mri 배경 사각형.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #d8e7c9;
+            color: #30462b;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-wrapper {
+            width: 1440px;
+            padding: 24px 40px 80px;
+        }
+
+        /* 상단 메뉴바 */
+        .nav-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .nav-bar-img {
+            width: 100%;
+            max-width: 1200px;
+            display: block;
+        }
+
+        .nav-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1120px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #737373;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            color: #4a5c4a;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link.research {
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: rgba(0,0,0,0.03);
+        }
+
+        /* 메인 타이틀 */
+        .title-section {
+            text-align: center;
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+
+        .title-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            color: #30462b;
+            letter-spacing: 1px;
+        }
+
+        /* 결과 카드 */
+        .result-card-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .result-card {
+            width: 860px;
+            background-color: #fbf5e6;
+            border-radius: 80px;
+            padding: 70px 90px 60px;
+            text-align: center;
+        }
+
+        .result-stage {
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .result-quote {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .result-quote span {
+            font-size: 24px;
+        }
+
+        .brain-img {
+            width: 480px;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto 40px;
+            object-fit: contain;
+        }
+
+        .card-description {
+            font-size: 13px;
+            line-height: 1.9;
+            color: #425138;
+        }
+
+        .card-description .arrow-line {
+            margin-top: 10px;
+        }
+
+        /* fMRI 의미 */
+        .meaning-section {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 14px;
+            line-height: 1.9;
+            color: #273821;
+        }
+
+        .meaning-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+            padding-left: 18px;
+        }
+
+        /* 여행지 추천 버튼 */
+        .recommend-btn {
+            margin: 40px auto 0;
+            display: block;
+            width: 240px;
+            padding: 14px 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            background-color: #506f3e;
+            color: #ffffff;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .recommend-btn:hover {
+            background-color: #3a522d;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- 상단 메뉴바 -->
+    <div class="nav-wrapper">
+        <img src="/images/mri 상단 메뉴바.png" class="nav-bar-img" alt="top bar">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo" style="text-decoration:none; color:inherit;">M:ind</a>
+            <div class="nav-right">
+                <div class="nav-link">About</div>
+                <a href="/research-notes.html" class="nav-link research" style="text-decoration:none; color:inherit;">Research Notes</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 타이틀 -->
+    <section class="title-section">
+        <h1>fMRI Type</h1>
+    </section>
+
+    <!-- 결과 카드 -->
+    <div class="result-card-wrapper">
+        <div class="result-card">
+            <div class="result-stage">4단계 - 심한 스트레스</div>
+            <div class="result-quote">
+                <span>&ldquo;</span>여러 회로가 엇갈려 작동하는 혼란스러운 뇌.<span>&rdquo;</span>
+            </div>
+
+            <img src="/images/mri4단계-심한스트레스.png" alt="4단계 fMRI 뇌 패턴" class="brain-img">
+
+            <div class="card-description">
+                이 단계는 실제 fMRI에서도 깔끔한 단일 색 패턴이 나타나지 않아. 대신,<br>
+                • 어떤 회로는 과활성(빨강↑)<br>
+                • 어떤 회로는 만성적으로 비활성(파랑↓)<br>
+                • 조건과 비교 방식에 따라 보라·연두 같은 혼합 색이 나타나기도 함<br>
+                &nbsp;&nbsp;→ 두 지도(activation vs deactivation)를 오버레이할 때<br>
+                <div class="arrow-line">
+                    → 전체 네트워크가 제각각 따로 놀고 조절이 깨진 상태
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fMRI 의미 + 버튼 -->
+    <section class="meaning-section">
+        <div class="meaning-title">📌 fMRI 의미</div>
+        <div>
+            (이미지에 fMRI 의미 설명이 없으므로 기존 내용 유지 또는 추가 설명 필요)
+        </div>
+
+        <a href="/travle-4.html" class="recommend-btn">여행지 추천 받기</a>
+    </section>
+
+</div>
+</body>
+</html>

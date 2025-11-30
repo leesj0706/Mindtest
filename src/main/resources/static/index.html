@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mind Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f7efdd;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 1440px;
+            padding-top: 32px;
+            padding-bottom: 80px;
+            color: #303030;
+        }
+
+        /* 상단 메뉴바 */
+        .nav-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .nav-bar-img {
+            width: 100%;
+            display: block;
+        }
+
+        .nav-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1120px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #737373;
+            line-height: 1;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            color: #4a5c4a;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link.research {
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        /* 의자 히어로 이미지 */
+        .hero-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 56px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 1120px;
+            border-radius: 40px;
+            display: block;
+        }
+
+        /* 의자 위 문구 */
+        .hero-text {
+            position: absolute;
+            left: 50%;
+            top: 48%;
+            transform: translate(-50%, -50%);
+            font-size: 39px;
+            color: #4a4335;
+            white-space: nowrap;
+            pointer-events: none;
+            font-weight: 500;
+        }
+
+        /* 아래 내용 */
+        .content-section {
+            width: 82%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .headline-ko {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .sub-ko {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 28px;
+        }
+
+        .steps-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .step-card {
+            position: relative;
+            width: 260px;
+            height: 140px;
+        }
+
+        .step-card-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            display: block;
+        }
+
+        .step-card-content {
+            position: absolute;
+            inset: 0;
+            padding: 18px 20px;
+            text-align: left;
+            color: #203320;
+        }
+
+        .step-card-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+
+        .step-card-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .step-card-desc {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #3d523d;
+        }
+
+        /* Step 3 텍스트 색상 - 밝은 베이지 */
+        .step3 .step-card-content {
+            color: #f7efdd;
+        }
+
+        .step3 .step-card-label {
+            color: #f7efdd;
+        }
+
+        .step3 .step-card-title {
+            color: #f7efdd;
+        }
+
+        .step3 .step-card-desc {
+            color: #f7efdd;
+        }
+
+        /* Why + Start Test */
+        .why-start-row {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .why-section {
+            text-align: left;
+            max-width: 480px;
+        }
+
+        .why-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .why-body {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Start Test 버튼 */
+        .start-btn-wrapper {
+            flex-shrink: 0;
+        }
+
+        .start-btn {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .start-btn-img {
+            width: 190px;
+            display: block;
+        }
+
+        .start-btn-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -52%);
+            color: #f5f4e9;
+            font-size: 22px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 상단 메뉴바 -->
+    <div class="nav-wrapper">
+        <img src="/images/1상단메뉴바.png" class="nav-bar-img" />
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo" style="text-decoration:none; color:inherit;">Mind</a>
+            <div class="nav-right">
+                <div class="nav-link">About</div>
+
+                <!-- 🔥 버튼 기능 추가됨: 디자인 100% 그대로 유지 -->
+                <a href="/research-notes.html" class="nav-link research" style="text-decoration:none; color:inherit;">
+                    Research Notes
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 의자 히어로 -->
+    <div class="hero-wrapper">
+        <img src="/images/1상단이미지.png" class="hero-img" />
+        <div class="hero-text">
+            지금, 당신의 마음은 얼마나 지쳐있을까요?
+        </div>
+    </div>
+
+    <!-- 아래 콘텐츠 -->
+    <section class="content-section">
+        <div class="headline-ko">
+            지금 바로, 당신의 스트레스 지수와 회복 유형을 알아봐요.
+        </div>
+        <div class="sub-ko">Step to begin</div>
+
+        <div class="steps-row">
+            <div class="step-card">
+                <img src="/images/1step1.png" class="step-card-img" />
+                <div class="step-card-content">
+                    <div class="step-card-label">Step 1</div>
+                    <div class="step-card-title">Stress Scale</div>
+                    <div class="step-card-desc">
+                        최근 한 달 동안 내가 얼마나 스트레스를 느꼈는지<br />
+                        10개의 질문으로 간단하게 알아봐요.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <img src="/images/1step2.png" class="step-card-img" />
+                <div class="step-card-content">
+                    <div class="step-card-label">Step 2</div>
+                    <div class="step-card-title">fMRI Type</div>
+                    <div class="step-card-desc">
+                        스트레스를 받을 때 내 뇌가 어떤 방식으로 반응하는지<br />
+                        나만의 패턴을 확인해요.
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card step3">
+                <img src="/images/1step3.png" class="step-card-img" />
+                <div class="step-card-content">
+                    <div class="step-card-label">Step 3</div>
+                    <div class="step-card-title">Results & Journey</div>
+                    <div class="step-card-desc">
+                        측정된 결과를 바탕으로<br />
+                        지금 나에게 필요한 회복 방향과 팁을 알려줘요.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why + Start 버튼 -->
+        <div class="why-start-row">
+            <section class="why-section">
+                <h2 class="why-title">Why Mind Test?</h2>
+                <div class="why-body">
+                    <p>스트레스는 단순한 감정이 아니라, 몸과 마음의 신호예요.</p>
+                    <p>당신의 회복 패턴을 알면 더 빠르게 회복할 수 있어요.</p>
+                </div>
+            </section>
+
+            <div class="start-btn-wrapper">
+                <a href="/stress-scale.html" class="start-btn">
+                    <img src="/images/1스타트버튼.png" class="start-btn-img" />
+                    <span class="start-btn-text">Start Test</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
